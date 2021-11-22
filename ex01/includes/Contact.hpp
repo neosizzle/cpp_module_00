@@ -1,35 +1,38 @@
 #ifndef __CONTACT__H__
 #define __CONTACT__H__
+#include <iostream>
 
 class Contact
 {
 	public :
-		char	*first_name;
-		char	*last_name;
-		char	*phone_number;
+		std::string first_name;
+		std::string last_name;
+		std::string nickname;
+		std::string phone_number;
 
 		/*
 		**Consrtuctors
 		*/
-		Contact(char *first_name, char *last_name, char *phone_number, char *darkest_secret)
+		Contact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
 		{
 			first_name = first_name;
 			last_name = last_name;
+			nickname = nickname;
 			phone_number = phone_number;
 			darkest_secret = darkest_secret;
 		}
 	
 		Contact()
 		{
-			first_name = (char*)"";
-			last_name = (char*)"";
-			phone_number = (char*)"";
-			darkest_secret = (char*)"";
+			first_name = "";
+			last_name = "";
+			nickname = "";
+			phone_number = "";
+			darkest_secret = "";
 		}
-		void hello();
 
 	private :
-		char	*darkest_secret;
+		std::string darkest_secret;
 };
 
 #endif  //!__CONTACT__H__

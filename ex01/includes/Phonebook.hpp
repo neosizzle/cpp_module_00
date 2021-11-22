@@ -11,12 +11,19 @@ class Phonebook
 		Contact	contacts[8];
 
 		/*
+		** Methods
+		*/
+		void	search();
+		void	add();
+
+		/*
 		** Constructors
 		*/
 		Phonebook()
 		{
 			total_contacts = 0;
 		}
+
 };
 
 #endif  //!__PHONEBOOK__H__
