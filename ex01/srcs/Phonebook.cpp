@@ -1,6 +1,28 @@
 #include <iostream>
+#include <sstream>
 #include "Contact.hpp"
 #include "Phonebook.hpp"
+
+std::string ft_itoa(int i)
+{
+	std::string s;
+	std::stringstream out;
+
+	out << i;
+	s = out.str();
+	return s;
+}
+
+int	ft_strlen(std::string str)
+{
+	int	i;
+
+	i = -1;
+	while (str[++i])
+	{
+	}
+	return i;
+}
 
 int	valid_name(std::string str)
 {
@@ -30,9 +52,64 @@ int	valid_number(std::string str)
 	return 1;
 }
 
+void	display_property(std::string str, int length)
+{
+	int	len;
+	int	temp;
+
+	len = ft_strlen(str);
+	if (len <= length)
+	{
+		temp = len;
+		while (length - temp++ > 0)
+			std::cout << " ";
+		std::cout << str;
+	}
+	else
+	{
+		temp = -1;
+		while (++temp < length - 1)
+			std::cout << str[temp];
+		std::cout << ".";
+	}
+	
+}
+
+void	list_contacts(Contact *contacts)
+{
+	int			i;
+	std::string	str_idx;
+
+	i = -1;
+	/*
+	Print headers
+	*/
+	std::cout << "|     index|";
+	std::cout << "first_name|";
+	std::cout << " last_name|";
+	std::cout << "  nickname|"<< std::endl;
+
+	while (++i < 8)
+	{
+		str_idx = ft_itoa(i);
+		std::cout << "|";
+		display_property(str_idx, 10);
+		std::cout << "|";
+		display_property(contacts[i].first_name, 10);
+		std::cout << "|";
+		display_property(contacts[i].last_name, 10);
+		std::cout << "|";
+		display_property(contacts[i].nickname, 10);
+		std::cout << "|";
+
+		std::cout << std::endl;
+	}
+	
+}
+
 void	Phonebook::search()
 {
-	std::cout << "contachs\n";
+	list_contacts(contacts);
 }
 
 void	Phonebook::add()
@@ -70,4 +147,8 @@ void	Phonebook::add()
 		break ;
 	}
 
+	//create contact object
+	Contact contact(first_name, last_name, nickname, phone_number, darkest_secret);
+	contacts[(total_contacts)++ % 8] = contact;
+	std::cout << "Contact Added !" << std::endl;
 }

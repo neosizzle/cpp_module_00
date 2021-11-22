@@ -13,13 +13,13 @@ class Contact
 		/*
 		**Consrtuctors
 		*/
-		Contact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret)
+		Contact(std::string f_n, std::string l_n, std::string nick, std::string p_n, std::string d_s)
 		{
-			first_name = first_name;
-			last_name = last_name;
-			nickname = nickname;
-			phone_number = phone_number;
-			darkest_secret = darkest_secret;
+			first_name = f_n;
+			last_name = l_n;
+			nickname = nick;
+			phone_number = p_n;
+			darkest_secret = d_s;
 		}
 	
 		Contact()
