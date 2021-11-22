@@ -1,4 +1,5 @@
 SRCS = srcs/*.cpp
+OBJS = *.o
 INCS = includes
 NAME = a.out
 CC = c++ -Wall -Werror -Wextra
@@ -6,12 +7,14 @@ CC = c++ -Wall -Werror -Wextra
 all : ${NAME}
 
 ${NAME} :
-	${CC} -I${INCS} ${SRCS} -o ${NAME}
+	${CC} -c -I${INCS} ${SRCS}
+	${CC} ${OBJS} -o ${NAME}
 
 clean :
-	echo "clean";
+	rm -rf ${OBJS}
 
 fclean :
+	rm -rf ${OBJS}
 	rm -rf ${NAME}
 
 re : fclean all

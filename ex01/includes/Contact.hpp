@@ -1,4 +1,5 @@
-#include <iostream>
+#ifndef __CONTACT__H__
+#define __CONTACT__H__
 
 class Contact
 {
@@ -25,22 +26,10 @@ class Contact
 			phone_number = (char*)"";
 			darkest_secret = (char*)"";
 		}
+		void hello();
 
 	private :
 		char	*darkest_secret;
 };
 
-class Phonebook
-{
-	public :
-		int		total_contacts;
-		Contact	contacts[8];
-
-		/*
-		** Constructors
-		*/
-		Phonebook()
-		{
-			total_contacts = 0;
-		}
-};
+#endif  //!__CONTACT__H__
