@@ -9,6 +9,7 @@ class Contact
 		std::string last_name;
 		std::string nickname;
 		std::string phone_number;
+		std::string darkest_secret;
 
 		/*
 		**Consrtuctors
@@ -31,8 +32,6 @@ class Contact
 			darkest_secret = "";
 		}
 
-	private :
-		std::string darkest_secret;
 };
 
 #endif  //!__CONTACT__H__

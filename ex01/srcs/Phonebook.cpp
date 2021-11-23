@@ -107,9 +107,44 @@ void	list_contacts(Contact *contacts)
 	
 }
 
+void	print_details(Contact contact)
+{
+	std::cout << "first_name :";
+	std::cout << contact.first_name << std::endl;
+
+	std::cout << "last_name :";
+	std::cout << contact.last_name << std::endl;
+
+	std::cout << "nickname :";
+	std::cout << contact.nickname << std::endl;
+
+	std::cout << "phone_number :";
+	std::cout << contact.phone_number << std::endl;
+
+	std::cout << "darkest_secret :";
+	std::cout << contact.darkest_secret << std::endl;
+}
+
 void	Phonebook::search()
 {
+	std::string idx_raw;
+	int	idx;
+
 	list_contacts(contacts);
+	std::cout << "Input index to view :";
+	std::getline(std::cin, idx_raw);
+	if (ft_strlen(idx_raw) > 1 || !(idx_raw[0] >= '0' && idx_raw[0] <= '9'))
+	{
+		std::cout << "Invalid index\n";
+		return ;
+	}
+	idx = std::atoi(idx_raw.c_str());
+	if (idx > 7 || idx >= total_contacts)
+	{
+		std::cout << "Invalid index\n";
+		return ;
+	}
+	print_details(contacts[idx]);
 }
 
 void	Phonebook::add()
