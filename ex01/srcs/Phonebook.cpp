@@ -187,3 +187,8 @@ void	Phonebook::add()
 	contacts[(total_contacts)++ % 8] = contact;
 	std::cout << "Contact Added !" << std::endl;
 }
+
+Phonebook::Phonebook()
+{
+	total_contacts = 0;
+}

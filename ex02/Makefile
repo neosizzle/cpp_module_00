@@ -1,7 +1,7 @@
-SRCS = srcs/*.cpp
+SRCS = *.cpp
 OBJS = *.o
-INCS = includes
-NAME = phonebook
+INCS = .
+NAME = a.out
 CC = c++ -Wall -Werror -Wextra
 
 all : ${NAME}

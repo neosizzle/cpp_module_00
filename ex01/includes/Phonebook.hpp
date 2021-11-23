@@ -19,10 +19,7 @@ class Phonebook
 		/*
 		** Constructors
 		*/
-		Phonebook()
-		{
-			total_contacts = 0;
-		}
+		Phonebook();
 
 };
 
