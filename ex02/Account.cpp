@@ -1,5 +1,6 @@
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 /*
 ** Utils
@@ -17,8 +18,17 @@ int	ft_strlen(std::string str)
 
 void	Account::_displayTimestamp()
 {
+	std::time_t t = std::time(0);   // get time now
+    std::tm* now = std::localtime(&t);
+
 	std::cout << "[";
-	std::cout << "19920104_091532";
+	std::cout << (now->tm_year + 1900)
+        << (now->tm_mon + 1)
+        <<  now->tm_mday
+		<< "_"
+		<<  now->tm_hour
+		<<  now->tm_min
+		<<  now->tm_sec;
 	std::cout << "] ";
 }
 
